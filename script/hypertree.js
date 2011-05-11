@@ -28,7 +28,7 @@ function init(){
           var html = "<h4>" + node.data.displayName + "</h4>";
           $jit.id('inner-details').innerHTML = html;
         }
-        gadgets.window.adjustHeight();
+        gadgets.window.adjustHeight($("#container").height());
       },
       
       // Attach event handlers and add text to the
@@ -44,7 +44,7 @@ function init(){
                   }
           });
           //ht.refresh(true);
-          console.log(json);
+          //console.log(json);
         }
       },
     });
@@ -53,7 +53,6 @@ function init(){
     ht.loadJSON(json);
     // compute positions and plot.
     ht.refresh();
-    console.log('finished');
     // end
     ht.controller.onComplete();
   }

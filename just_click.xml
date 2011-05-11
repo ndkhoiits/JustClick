@@ -21,13 +21,14 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
 -->
 
 <Module>
-  <ModulePrefs title="Just Click! Gadget" title_url="http://www.exoplatform.com" directory_title="Gadget" 
-  description="Just Click! gadget">
+  <ModulePrefs title="Just Click Gadget" title_url="http://www.exoplatform.com" directory_title="Just Click Gadget" 
+  description="Just Click gadget">
     <Require feature="views"/>
     <Require feature="dynamic-height" />
     <Require feature="opensocial-0.8"/>
     <Require feature="setprefs"/>
     <Require feature="settitle"/>
+    <Require feature="minimessage" />
     
   </ModulePrefs>
   <Content type="html" view="home">

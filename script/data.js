@@ -9,7 +9,8 @@ function request() {
 }
 
 function response(dataResponse) {
-  var owner = dataResponse.get('get_viewer').getData();
+  var viewer = dataResponse.get('get_viewer').getData();
+  console.log(viewer);
   currentUser = "khoi_nguyen";
   reloadData(currentUser);
 }
@@ -17,13 +18,11 @@ function response(dataResponse) {
 // Get the data in rest service
 function reloadData(userId) {
   currentUser = userId;
-  console.log(currentUser);
   getContacts();
 }
 
 function getContacts(rest) {
   var currentView = gadgets.views.getCurrentView().getName();
-  console.log(currentView);
   var sendData = "username=" + currentUser;
   var callback = responseData;
   return $.ajax({
