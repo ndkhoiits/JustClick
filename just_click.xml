@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+Copyright (C) 2011 eXo Platform SAS.
+
+This is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation; either version 2.1 of
+the License, or (at your option) any later version.
+
+This software is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this software; if not, write to the Free
+Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+02110-1301 USA, or see the FSF site: http://www.fsf.org.
+
+-->
+
+<Module>
+  <ModulePrefs title="Just Click! Gadget" title_url="http://www.exoplatform.com" directory_title="Gadget" 
+  description="Just Click! gadget">
+    <Require feature="views"/>
+    <Require feature="dynamic-height" />
+    <Require feature="opensocial-0.8"/>
+    <Require feature="setprefs"/>
+    <Require feature="settitle"/>
+    
+  </ModulePrefs>
+  <Content type="html" view="home">
+    <![CDATA[ 
+    <link rel="stylesheet" type="text/css" href="./style/base.css"></link>
+    
+    <script type="text/javascript" src="./script/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="./script/hypertree.js"></script>
+    <script type="text/javascript" src="./script/data.js"></script>
+    <script type="text/javascript" src="./script/jit.js"></script>
+    
+    <script type="text/javascript">
+      gadgets.util.registerOnLoadHandler(request);
+    </script>
+    
+    <div id="container">
+      <div id="center-container">
+        <div id="infovis"></div>
+      </div>
+    </div>
+    
+    ]]>
+  </Content>
+  
+  <Content type="html" view="canvas">
+    <![CDATA[ 
+    <link rel="stylesheet" type="text/css" href="./style/base.css"></link>
+    
+    <script type="text/javascript" src="./script/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="./script/hypertree.js"></script>
+    <script type="text/javascript" src="./script/data.js"></script>
+    <script type="text/javascript" src="./script/jit.js"></script>
+    
+    <script type="text/javascript">
+      gadgets.util.registerOnLoadHandler(request);
+    </script>
+    
+    <div id="container" style="height:600px; width:900px;">
+      <div id="center-container" style="height:600px; width:900px">
+        <div id="infovis" style="height:600px; width:900px"></div>    
+      </div>
+    </div>
+    
+    <div id="right-container">
+      <div id="inner-details"></div>
+    </div>
+    
+    ]]>
+  </Content>
+</Module>
