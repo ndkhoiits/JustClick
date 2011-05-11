@@ -31,7 +31,7 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
     <Require feature="minimessage" />
     
   </ModulePrefs>
-  <Content type="html" view="home">
+  <Content type="html" view="home, profile">
     <![CDATA[ 
     <link rel="stylesheet" type="text/css" href="./style/base.css"></link>
     
