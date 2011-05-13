@@ -25,13 +25,14 @@ function reloadData(userId) {
 }
 
 function getContacts(rest) {
-  var currentView = gadgets.views.getCurrentView().getName();
-  var sendData = "username=" + currentUser;
+  Log.write("Loading " + currentUser + "...");
+  var depth = 1;
+  var sendData = "userName=" + currentUser + "&depth=" + depth;
   var callback = responseData;
   return $.ajax({
-    url: "/rest/my-service/getService",
+    url: "/rest/socialNetwork/relationship/portal",
     type: "GET",
-    async: false,
+    async: true,
     success: callback,
     contentType: "application/x-www-form-urlencoded",
     error: function() {$("#PageList").html("Cannot load Page data from service!");},

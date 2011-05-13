@@ -36,7 +36,7 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
     <link rel="stylesheet" type="text/css" href="./style/base.css"></link>
     
     <script type="text/javascript" src="./script/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="./script/hypertree.js"></script>
+    <script type="text/javascript" src="./script/rgraph.js"></script>
     <script type="text/javascript" src="./script/data.js"></script>
     <script type="text/javascript" src="./script/jit.js"></script>
     
@@ -48,8 +48,8 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
       <div id="center-container">
         <div id="infovis"></div>
       </div>
+      <div id="log"></div>
     </div>
-    
     ]]>
   </Content>
   
@@ -58,7 +58,7 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
     <link rel="stylesheet" type="text/css" href="./style/base.css"></link>
     
     <script type="text/javascript" src="./script/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="./script/hypertree.js"></script>
+    <script type="text/javascript" src="./script/rgraph.js"></script>
     <script type="text/javascript" src="./script/data.js"></script>
     <script type="text/javascript" src="./script/jit.js"></script>
     
@@ -70,12 +70,26 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
       <div id="center-container" style="height:600px; width:900px">
         <div id="infovis" style="height:600px; width:900px"></div>    
       </div>
+      <div id="right-container">
+        <div id="inner-details">
+          <div id="avatar" class="Avatar ClearFix">
+            <img alt="" src="" />
+            <div class="Info">
+              <h2 id="displayname">Do Trong Thanh</h2>
+              <p><b>Emal:<b><span>dfahfhs</span></p>
+              <p><b>phone:<b><span>dfahfhs</span></p>
+            </div>
+          </div>
+          <ul id="fiends" class="fiends">
+            <li>fdhss</li>
+            <li>fshfh</li>
+            <li>fshsh</li>
+            <li>sfhfghs</li>
+          </ul>
+        </div>
+      </div>
+      <div id="log"></div>
     </div>
-    
-    <div id="right-container">
-      <div id="inner-details"></div>
-    </div>
-    
     ]]>
   </Content>
 </Module>

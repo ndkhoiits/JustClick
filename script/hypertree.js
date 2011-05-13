@@ -37,13 +37,14 @@ function init(){
       onCreateLabel: function(label, node){
         label.innerHTML = node.id;
         label.onclick = function() {
-          //reloadData(node.id);
+          reloadData(node.id);
           ht.onClick(node.id, {
                   onComplete: function() {
                     ht.controller.onComplete();
                   }
           });
-          //ht.refresh(true);
+          $jit.id('infovis').innerHTML = "";
+          ht.refresh(true);
           //console.log(json);
         }
       },

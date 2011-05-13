@@ -118,3 +118,28 @@ a {
     font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
     padding:7px;
 }
+
+.Avatar {
+  padding-top: 10px;
+}
+
+.Avatar img {
+  float: left;
+  width: 150px;
+  border: 2px solid #f5f5f5;
+}
+
+.Avatar .Info {
+  margin-left: 160px;
+}
+
+.Avatar .Info .h2 {
+  color: orange;
+  margin: 0px 0px 10px 0px;
+  font-size: 14px;
+}
+
+.Avatar .Info p {
+  line-height: 24px;
+  font-size: 12px;
+}
