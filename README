@@ -13,16 +13,25 @@ Members of team:
 
 =============================================================================================================
 
-Descriptions
+Descriptions:
 
-
-=============================================================================================================
-
-Screenshots
-
-Refer to the screenshots directory with home and canvas gadget modes.
+  Relationships between members of intranet are visualized as a graph displayed in Just Click gadget. With the
+gadget, user could navigate interactively in the relationships cloud to get public information of community 
+member as well as to discover complex friend connections.
 
 =============================================================================================================
 
-TODO
+Screenshots:
+
+./screenshots/CurrentUser.png
+./screenshots/Home.png
+./screenshots/Selected Friend.png
+
+=============================================================================================================
+
+TODO:
+
+1. Improve animation effect by optimizing client-side code
+
+2. Improve graph-drawing speed by moving the code computing graph nodes 's coordinates to server side 
 
