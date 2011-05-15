@@ -24,7 +24,7 @@ function reloadData(userId) {
   getContacts();
 }
 
-function getContacts(rest) {
+function getContacts() {
   Log.write("Loading " + currentUser + "...");
   var depth = 1;
   var sendData = "userName=" + currentUser + "&depth=" + depth;

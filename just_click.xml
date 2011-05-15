@@ -21,7 +21,12 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
 -->
 
 <Module>
-  <ModulePrefs title="Just Click Gadget" title_url="http://www.exoplatform.com" directory_title="Just Click Gadget" 
+  <ModulePrefs title="Just Click Gadget" 
+  title_url="http://www.exoplatform.com" 
+  directory_title="Just Click Gadget"
+  author="Nguyen Duc Khoi"
+  author_email="khoind@exoplatform.com"
+  thumbnail="images/connection.jpg"
   description="Just Click gadget">
     <Require feature="views"/>
     <Require feature="dynamic-height" />

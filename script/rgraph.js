@@ -10,7 +10,12 @@ var Log = {
 };
 
 function displayDetails(node) {
-  var avatar = '<img id="avatar" alt="" src="'+node.data.thumbnail+'" />';
+  var avatarResource = node.data.thumbnail;
+  console.log(avatarResource);
+  if (!avatarResource) {
+    avatarResource = '/social-portlet/skin/social/portlet/UIProfilePortlet/DefaultSkin/background/BLAvatar.gif';
+  }
+  var avatar = '<img id="avatar" alt="" src="'+ avatarResource +'" />';
   var info =   '<div class="Info">'
              +   '<h2 id="displayname" class="Line">' + node.name + '</h2>';
   if (node.data.email && node.data.email != 'null')
@@ -27,13 +32,6 @@ function displayDetails(node) {
   
   var html = avatar + info + friends;
   $("#userinfo").html(html);
-      
-  ////var html = "<h4>" + node.name + "</h4>";
-  //var avatar = "<img src= "+node.data.thumbnail+" />";
-  //$("#avatar").attr("src",node.data.thumbnail);
-  //$("#displayname").html(node.name);
-  
-  //$jit.id('avatar').innerHTML = avatar;
 }
 
 function init() {
@@ -72,7 +70,6 @@ function init() {
     
     onBeforeCompute: function(node){
       Log.write("Centering " + node.name + "...");
-      // $jit.id('inner-details').innerHTML = node.data.relation;
     },
     
     onComplete: function () {
