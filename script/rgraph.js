@@ -2,14 +2,39 @@ var Log = {
   elem: false,
 
   write: function(text){
-    
-    if (!this.elem) 
+    if (!this.elem)
       this.elem = document.getElementById('log');
     this.elem.innerHTML = text;
-    console.log(this.elem.offsetWidth);
     this.elem.style.left = ($jit.id('container').offsetWidth - this.elem.offsetWidth) / 2 + 'px';
   }
 };
+
+function displayDetails(node) {
+  var avatar = '<img id="avatar" alt="" src="'+node.data.thumbnail+'" />';
+  var info =   '<div class="Info">'
+             +   '<h2 id="displayname" class="Line">' + node.name + '</h2>';
+  if (node.data.email && node.data.email != 'null')
+    info += '<div class="Email">' + node.data.email + '</div>';
+  info += '</div>';
+  
+  var friends = '<div id="friends" class="friends ClearFix"><ul>';
+  node.eachAdjacency(function(adj) {
+    var child = adj.nodeTo;
+    friends += "<li>" + child.name + " " + "<div class=\"relation\"></div></li>";
+  });
+  
+  friends += "</ul></div>";
+  
+  var html = avatar + info + friends;
+  $("#userinfo").html(html);
+      
+  ////var html = "<h4>" + node.name + "</h4>";
+  //var avatar = "<img src= "+node.data.thumbnail+" />";
+  //$("#avatar").attr("src",node.data.thumbnail);
+  //$("#displayname").html(node.name);
+  
+  //$jit.id('avatar').innerHTML = avatar;
+}
 
 function init() {
   var currentView = gadgets.views.getCurrentView().getName();
@@ -52,13 +77,9 @@ function init() {
     
     onComplete: function () {
       Log.write('');
-      if ($jit.id('avatar')) {
+      if ($jit.id('inner-details')) {
         var node = rgraph.graph.getClosestNodeToOrigin("current");
-        //var html = "<h4>" + node.name + "</h4>";
-        var avatar = "<img src= "+node.data.thumbnail+" />"
-        //$jit.id('avatar').innerHTML = avatar;
-        
-        
+        displayDetails(node);
       }
       gadgets.window.adjustHeight($("#container").height());
     },

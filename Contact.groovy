@@ -16,7 +16,6 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.exoplatform.social.service.rest;
 
 import org.exoplatform.container.ExoContainerContext;
 import org.exoplatform.container.PortalContainer;
@@ -58,7 +57,11 @@ public class SocialNetwork
       if(userProfile != null)
       {
          userNode.setName(userProfile.getFullName());
-         userNode.getData().setThumbnail(userProfile.getAvatarImageSource());
+
+         AdditionalData data = userNode.getData();
+         data.setThumbnail(userProfile.getAvatarImageSource());
+         data.setEmail(userProfile.getProperty(Profile.EMAIL).toString());
+         data.setPhone(userProfile.getProperty(Profile.CONTACT_PHONES).toString());
       }
 
       userNode = buildUserNode(userNode, selectedUserIdentity, relationshipManager, depth, displayLimit);
@@ -207,6 +210,12 @@ class AdditionalData
 
    private String thumbnail;
 
+   private String address;
+
+   private String email;
+
+   private String phone;
+
    public AdditionalData(String thumbnail)
    {
       this.thumbnail = thumbnail;
@@ -240,6 +249,36 @@ class AdditionalData
    public void setAngular(double _angular)
    {
       this.angular = _angular;
+   }
+
+   public String getAddress()
+   {
+      return this.address;
+   }
+
+   public void setAddress(String address)
+   {
+      this.address = address;
+   }
+
+   public String getEmail()
+   {
+      return this.email;
+   }
+
+   public void setEmail(String email)
+   {
+      this.email = email;
+   }
+
+   public String getPhone()
+   {
+      return this.phone;
+   }
+
+   public void setPhone(String phone)
+   {
+      this.phone = phone;
    }
 }
 

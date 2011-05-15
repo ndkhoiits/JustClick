@@ -31,7 +31,6 @@ a {
   height:300px;
 }
 
-#left-container, 
 #right-container, 
 #center-container {
     height:300px;
@@ -39,8 +38,8 @@ a {
     top:0;
 }
 
-#left-container, #right-container {
-    width:293px;
+#right-container {
+    width:415px;
     height: 600px;
     color:#686c70;
     text-align: left;
@@ -48,14 +47,6 @@ a {
     background-color:#fff;
     background-repeat:no-repeat;
     border-bottom:1px solid #ddd;
-}
-
-#left-container {
-    left:0;
-    background-image:url('col2.png');
-    background-position:center right;
-    border-left:1px solid #ddd;
-    
 }
 
 #right-container {
@@ -125,6 +116,7 @@ a {
 
 .Avatar img {
   float: left;
+  height: 120px;
   width: 150px;
   border: 2px solid #f5f5f5;
 }
@@ -142,4 +134,15 @@ a {
 .Avatar .Info p {
   line-height: 24px;
   font-size: 12px;
+}
+.ClearFix {
+  clear: both;  
+}
+
+.friends {
+  height: 400px;
+  overflow: auto;
+}
+.Line {
+  border-bottom: 1px solid #B7B7B7;
 }
