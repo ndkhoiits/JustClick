@@ -17,8 +17,11 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
+
 import org.exoplatform.container.ExoContainerContext;
 import org.exoplatform.container.PortalContainer;
+import org.exoplatform.services.organization.OrganizationService;
+import org.exoplatform.services.organization.User;
 import org.exoplatform.social.core.identity.model.Identity;
 import org.exoplatform.social.core.identity.model.Profile;
 import org.exoplatform.social.core.identity.provider.OrganizationIdentityProvider;
@@ -60,8 +63,12 @@ public class SocialNetwork
 
          AdditionalData data = userNode.getData();
          data.setThumbnail(userProfile.getAvatarImageSource());
-         data.setEmail(userProfile.getProperty(Profile.EMAIL).toString());
-         data.setPhone(userProfile.getProperty(Profile.CONTACT_PHONES).toString());
+         OrganizationService service = (OrganizationService)portalContainer.getComponentInstanceOfType(OrganizationService.class);
+         if (service != null)
+         {
+           User useraccount = service.getUserHandler().findUserByName(userName);
+           data.setEmail(useraccount.getEmail());
+         }
       }
 
       userNode = buildUserNode(userNode, selectedUserIdentity, relationshipManager, depth, displayLimit);
@@ -210,11 +217,7 @@ class AdditionalData
 
    private String thumbnail;
 
-   private String address;
-
    private String email;
-
-   private String phone;
 
    public AdditionalData(String thumbnail)
    {
@@ -251,16 +254,6 @@ class AdditionalData
       this.angular = _angular;
    }
 
-   public String getAddress()
-   {
-      return this.address;
-   }
-
-   public void setAddress(String address)
-   {
-      this.address = address;
-   }
-
    public String getEmail()
    {
       return this.email;
@@ -269,16 +262,6 @@ class AdditionalData
    public void setEmail(String email)
    {
       this.email = email;
-   }
-
-   public String getPhone()
-   {
-      return this.phone;
-   }
-
-   public void setPhone(String phone)
-   {
-      this.phone = phone;
    }
 }
 
