@@ -19,13 +19,25 @@ Descriptions:
 gadget, user could navigate interactively in the relationships cloud to get public information of community 
 member as well as to discover complex friend connections.
 
+  With an intranet which have a lot of user, it's hard to see friends clearly, so user can drag and drop the graph
+and scroll on graph to zoom out or zoom in
+
+=============================================================================================================
+
+How to install
+
+  This gadget consists of two parts:
+  - Service: get all friends of an user and return a JSON. Use intranet IDE to deploy this service
+  - Gadget: contains gadget XML file, javascript and stylesheet, deploy this gadget on intranet IDE.
+
 =============================================================================================================
 
 Screenshots:
 
-./screenshots/CurrentUser.png
-./screenshots/Home.png
-./screenshots/Selected Friend.png
+* ./screenshots/Home.png : Screenshot for gadget in home mode.
+* ./screenshots/CurrentUser.png : Screenshot for gadget in canvas mode and first request, the centre node is current user
+* ./screenshots/Selected Friend.png : Screenshot for gadget in canvas mode, user can click on a node to select an user, gadget
+  send a request to get all friends of selected user and display as planet with selected user is middle node.
 
 =============================================================================================================
 
@@ -35,3 +47,4 @@ TODO:
 
 2. Improve graph-drawing speed by moving the code computing graph nodes 's coordinates to server side 
 
+3. Allow to set the user preferences for display style (background color, node style, edge...) and kind of graph (Radial tree, Hypertree, spacetree..)
