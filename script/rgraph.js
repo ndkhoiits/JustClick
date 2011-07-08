@@ -11,7 +11,6 @@ var Log = {
 
 function displayDetails(node) {
   var avatarResource = node.data.thumbnail;
-  console.log(avatarResource);
   if (!avatarResource) {
     avatarResource = '/social-portlet/skin/social/portlet/UIProfilePortlet/DefaultSkin/background/BLAvatar.gif';
   }

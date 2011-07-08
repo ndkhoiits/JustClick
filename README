@@ -48,3 +48,7 @@ TODO:
 2. Improve graph-drawing speed by moving the code computing graph nodes 's coordinates to server side 
 
 3. Allow to set the user preferences for display style (background color, node style, edge...) and kind of graph (Radial tree, Hypertree, spacetree..)
+
+4. Highlight some friends who is online.
+
+5. Through this gadget, user can do some actions such as invite or revoke friends, and display more information which be able to customize.
